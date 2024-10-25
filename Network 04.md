@@ -1,8 +1,5 @@
 # Network 04
 
-Date: June 27, 2024
-Files & media: AWS_ClientVPN%25EA%25B5%25AC%25EC%2584%25B1%25ED%2595%2598%25EA%25B8%25B0.pdf, VPN(Virtual_Private_Network).pdf
-
 ## ACL inbound outbound 실습
 
 ACL은 인바운드 아웃바운드 규칙 모두 허용시켜야 함.
@@ -11,7 +8,7 @@ ACL은 인바운드 아웃바운드 규칙 모두 허용시켜야 함.
 
 보안그룹은 들어오는 것에 대해서만.
 
-![Untitled](Network%2004%2005bfbb53870e4c5d916b95b1ddd48ec2/Untitled.png)
+![Untitled](Network%2004/Untitled.png)
 
 위 두 개는 식별용도.
 
@@ -52,21 +49,19 @@ permit ip any any
 
 각각 처리해도 됨.
 
-![Untitled](Network%2004%2005bfbb53870e4c5d916b95b1ddd48ec2/Untitled%201.png)
+![Untitled](Network%2004/Untitled%201.png)
 
-![Untitled](Network%2004%2005bfbb53870e4c5d916b95b1ddd48ec2/Untitled%202.png)
+![Untitled](Network%2004/Untitled%202.png)
 
-![Untitled](Network%2004%2005bfbb53870e4c5d916b95b1ddd48ec2/Untitled%203.png)
+![Untitled](Network%2004/Untitled%203.png)
 
 위 이미지는 실습 결과.
 
 `ACL 설정 시 순서 중요. IP가 작은 범위부터 넓은 범위로`
 
-[VPN(Virtual Private Network).pdf](Network%2004%2005bfbb53870e4c5d916b95b1ddd48ec2/VPN(Virtual_Private_Network).pdf)
-
 ## VPN 터널링 실습
 
-![Untitled](Network%2004%2005bfbb53870e4c5d916b95b1ddd48ec2/Untitled%204.png)
+![Untitled](Network%2004/Untitled%204.png)
 
 ```bash
 R1)
@@ -128,7 +123,7 @@ tunnel destination 3.3.12.1
 ip route 192.168.1.0 255.255.255.0 tunnel 3
 ```
 
-![Untitled](Network%2004%2005bfbb53870e4c5d916b95b1ddd48ec2/Untitled%205.png)
+![Untitled](Network%2004/Untitled%205.png)
 
 터널링으로 PC1에서 PC2로 ping을 보냈을 때 통신이 가능함.
 
@@ -235,11 +230,11 @@ int s1/1
 crypto map vpn
 ```
 
-![Untitled](Network%2004%2005bfbb53870e4c5d916b95b1ddd48ec2/Untitled%206.png)
+![Untitled](Network%2004/Untitled%206.png)
 
-![Untitled](Network%2004%2005bfbb53870e4c5d916b95b1ddd48ec2/Untitled%207.png)
+![Untitled](Network%2004/Untitled%207.png)
 
-![Untitled](Network%2004%2005bfbb53870e4c5d916b95b1ddd48ec2/Untitled%208.png)
+![Untitled](Network%2004/Untitled%208.png)
 
 `vpn 설정 후 ping을 던졌을 때 ESP로 암호화 되었음을 알 수 있음`
 
@@ -249,11 +244,11 @@ crypto map vpn
 
 ### `Authentication`
 
-![Untitled](Network%2004%2005bfbb53870e4c5d916b95b1ddd48ec2/4adc068d-5f32-4e9c-a454-aee8de47a930.png)
+![Untitled](Network%2004/4adc068d-5f32-4e9c-a454-aee8de47a930.png)
 
 ### `Encryption Algorithms`
 
-![Untitled](Network%2004%2005bfbb53870e4c5d916b95b1ddd48ec2/Untitled%209.png)
+![Untitled](Network%2004/Untitled%209.png)
 
 ---
 
@@ -275,7 +270,7 @@ crypto map vpn
 
 `시간 동기화 설정.`
 
-![Untitled](Network%2004%2005bfbb53870e4c5d916b95b1ddd48ec2/Untitled%2010.png)
+![Untitled](Network%2004/Untitled%2010.png)
 
 ```bash
 CA)
@@ -322,7 +317,7 @@ no sh
 show crypto pki server
 ```
 
-![Untitled](Network%2004%2005bfbb53870e4c5d916b95b1ddd48ec2/Untitled%2011.png)
+![Untitled](Network%2004/Untitled%2011.png)
 
 ### `3. 공개키/개인키 생성`
 
@@ -333,7 +328,7 @@ ip domain-name cloudwave.com
 crypto key generate rsa general-key modulus 2048
 ```
 
-![Untitled](Network%2004%2005bfbb53870e4c5d916b95b1ddd48ec2/Untitled%2012.png)
+![Untitled](Network%2004/Untitled%2012.png)
 
 - 공개키 확인
 
@@ -341,7 +336,7 @@ crypto key generate rsa general-key modulus 2048
 show crypto mypubkey rsa
 ```
 
-![Untitled](Network%2004%2005bfbb53870e4c5d916b95b1ddd48ec2/Untitled%2013.png)
+![Untitled](Network%2004/Untitled%2013.png)
 
 ### `4.CA인증서 다운로드`
 
@@ -367,7 +362,7 @@ crypto pki enroll CA
 show crypto pki certificates
 ```
 
-![Untitled](Network%2004%2005bfbb53870e4c5d916b95b1ddd48ec2/Untitled%2014.png)
+![Untitled](Network%2004/Untitled%2014.png)
 
 ## AWS ClientVPN 설정
 
@@ -381,8 +376,6 @@ wsl --install을 다시 입력하여 ubuntu 시작
 ```
 
 설치 전 windows 기능 켜기/끄기에서 Linux용 Windows 하위 시스템에 체크가 되어있는지 확인 → 체크가 되어있으면 해제
-
-[AWS_ClientVPN구성하기.pdf](Network%2004%2005bfbb53870e4c5d916b95b1ddd48ec2/AWS_ClientVPN%25EA%25B5%25AC%25EC%2584%25B1%25ED%2595%2598%25EA%25B8%25B0.pdf)
 
 ```bash
 sudo apt update
@@ -522,32 +515,7 @@ Data Base Updated
 ```bash
 hyemi@KHP18:~/keys/pki/private$ cat yhm.server.key
 -----BEGIN PRIVATE KEY-----
-MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDG8iN1lO9/W49g
-5wKKkt/2bwfn3fV1PZCtgnDR2eA8GWgu8LSm9bqYE/k7/dFTUb/j5IDr1zOnPq4D
-v4Bqn+jfnHYPyj1CGZycFtYsvGM25SvNHqBylrGgHcSLi6SncurpKI7eVuhcCwiq
-OERFvUXW+PnmSSsTDKaSkxRoYvZ/36kNIwGDqlPKsNYNnQAMJ4o3lnmrawfq5SdO
-QZy5RdZ5EGXyS0c57KuUeIZzqqyDgfVrP/x8qSZfjZx00r6Jhwiq8InYGm/wIbcp
-SfDXzgsD1rleclYMiLLnqC2NcTQwiiu06XfgjBNFfvYCcy1eIXrZlC+9+Qyh68zu
-XSWtDP9PAgMBAAECggEATEkJA8tKUsGfJv8t4EkVi/9jPqvDtWMYGRBNhopPC3yK
-kIVIIEVVeX8fMLvRCmvscsxqCwUID3dfbpx992S9/RCXzNI1zyTXAptXIOxT9vbF
-Zu/5gjb6gXUoqoGvb24HWcRtlCArFTA98FeHBl7fauEpof4ogDN3o/i1+JkKAFnr
-9r7CQHLL/5KRAot/16JuZofXkFQOEAE6DJGkNR9kgLXzBmxuwNVxXttwswp9Ch3o
-Ec8dwVAllrpN+9709OnFPwRGZ+Zl/MkHZXEwWktIt8iw87UWnL1OddbkPYtQbawT
-a8a2zdv4RxbvlQcQkt7BBzztOaEtnqdvVena0hczsQKBgQDlNW1BvX7By3LyJ+bo
-PZFx83eUHr33eI2pxUTeBS74gdwZuVYHZukohL2VGzXlGbmSfobrt6Nudt+pkUYQ
-DJMDE1gpFwHv4P6qujSR/7JN4b5hrxikeWlJVvWt3q/GLrVep8ZJKhiucvnPribQ
-hNSl6OuQpNLx6OIcwOaOp03qSwKBgQDeMylnCGVD29ilRsnaFRketwHsfs4gmkg6
-yrJfKWg+riNpDEiBjvZeXV4VE6QQ+k6Bxh9Ty78smkLGJUl6wnuB977J9tBbWnhF
-efpGa8NI42j+8689tY5BYDvmi/tK1NxO0K+tERZIc2wKw3kRQwHwFBG5/H+yXlzQ
-f1rVPtBcjQKBgQCu4VOqK/3RuPvLvRwVqBwX2E4tSkNg1K8pkCTaTRQocVRQoDL+
-VMuiqZzIbklxsm3/UuB4atWcS8Cc7QWK6z0jxJeoSjClKILGGmpP1srhV1Ldzy27
-GBN37Ixoi5aLXEnvnYzRd/f66iimB1cAE8j3iT5qTwfPoQMcMyX2Q7pT/wKBgDSP
-CYYTmFB62j4OBoUNZIm9ZDkarYtMszUk6RhVZREeg8W/YA81T9V2ZGC76p0ReCx+
-Pr7FfQ0B2DWicEUXZ7uQbJK9TP+u4LAecDLkHqdJE3brEVKZdXLFXqXkCqbivtHt
-zwAzAIBWvQG2xxZsMTMmrCLANTxt0aqH1WaHmyWpAoGAJXAbbe7aJKECTDQbbsce
-Vbir77wYm6GU7p/4CxO1jd5EyXxU4EaYmM+AoulhXhEmX2Zne7G4yqAFSgMTeATy
-/IEeZWJkZjTEs2lQH6iY2+yg/AAl/kmp7wT96ho4yCcE/Jz/+WcWD0+EN5qANTRy
-a6+KA7Bh2wHprKunnTDMqYM=
+...
 -----END PRIVATE KEY-----
 hyemi@KHP18:~/keys/pki/private$ cd ..
 hyemi@KHP18:~/keys/pki$ ls
@@ -574,24 +542,7 @@ Certificate:
             Public Key Algorithm: rsaEncryption
                 Public-Key: (2048 bit)
                 Modulus:
-                    00:c6:f2:23:75:94:ef:7f:5b:8f:60:e7:02:8a:92:
-                    df:f6:6f:07:e7:dd:f5:75:3d:90:ad:82:70:d1:d9:
-                    e0:3c:19:68:2e:f0:b4:a6:f5:ba:98:13:f9:3b:fd:
-                    d1:53:51:bf:e3:e4:80:eb:d7:33:a7:3e:ae:03:bf:
-                    80:6a:9f:e8:df:9c:76:0f:ca:3d:42:19:9c:9c:16:
-                    d6:2c:bc:63:36:e5:2b:cd:1e:a0:72:96:b1:a0:1d:
-                    c4:8b:8b:a4:a7:72:ea:e9:28:8e:de:56:e8:5c:0b:
-                    08:aa:38:44:45:bd:45:d6:f8:f9:e6:49:2b:13:0c:
-                    a6:92:93:14:68:62:f6:7f:df:a9:0d:23:01:83:aa:
-                    53:ca:b0:d6:0d:9d:00:0c:27:8a:37:96:79:ab:6b:
-                    07:ea:e5:27:4e:41:9c:b9:45:d6:79:10:65:f2:4b:
-                    47:39:ec:ab:94:78:86:73:aa:ac:83:81:f5:6b:3f:
-                    fc:7c:a9:26:5f:8d:9c:74:d2:be:89:87:08:aa:f0:
-                    89:d8:1a:6f:f0:21:b7:29:49:f0:d7:ce:0b:03:d6:
-                    b9:5e:72:56:0c:88:b2:e7:a8:2d:8d:71:34:30:8a:
-                    2b:b4:e9:77:e0:8c:13:45:7e:f6:02:73:2d:5e:21:
-                    7a:d9:94:2f:bd:f9:0c:a1:eb:cc:ee:5d:25:ad:0c:
-                    ff:4f
+                    ...
                 Exponent: 65537 (0x10001)
         X509v3 extensions:
             X509v3 Basic Constraints:
@@ -610,41 +561,9 @@ Certificate:
                 DNS:yhm.server
     Signature Algorithm: sha256WithRSAEncryption
     Signature Value:
-        a4:78:1d:55:ab:ce:af:eb:0e:e8:bb:19:33:43:40:ab:5b:b3:
-        ac:86:ba:60:68:04:16:ba:58:7f:c2:8f:2b:a9:0c:e2:3d:9f:
-        be:09:ed:8a:de:9c:bf:ca:91:99:04:e9:8e:7c:c8:0c:d4:eb:
-        fa:85:a7:5d:c4:48:9e:38:75:37:2f:5a:0f:8f:e9:e7:e6:fe:
-        57:63:1f:8e:d2:c9:41:83:68:55:ba:07:5d:42:f8:b9:8a:a3:
-        49:d0:ef:67:4d:e3:78:89:00:47:0f:37:6e:98:61:c0:fa:5a:
-        61:c3:b1:83:55:e8:33:d1:f4:11:11:02:c3:20:97:a3:a9:18:
-        58:73:d7:b1:82:67:a3:70:b5:fa:8f:f7:63:ed:e1:46:5c:25:
-        e9:b4:e1:b4:c7:30:15:86:d2:f5:41:b0:d1:ea:33:8d:c3:65:
-        18:eb:6a:14:2b:18:87:7c:01:d5:41:92:76:e5:4f:6b:99:6c:
-        7e:3e:40:f9:b9:7b:ff:cf:5b:a6:f5:44:ce:72:8c:b7:e0:77:
-        84:98:8a:0e:5c:af:a2:10:fc:21:52:9a:63:37:0d:4d:1f:c5:
-        1b:ed:13:c3:cb:6f:a4:46:41:14:70:c2:dd:ad:db:57:8f:6b:
-        f6:60:b6:36:f5:07:fa:94:33:3f:44:b8:13:4d:29:80:45:7a:
-        fa:78:48:ad
+        ...
 -----BEGIN CERTIFICATE-----
-MIIDcDCCAligAwIBAgIRALC6iHK5sIXgeEt34tFn7BQwDQYJKoZIhvcNAQELBQAw
-FjEUMBIGA1UEAwwLRWFzeS1SU0EgQ0EwHhcNMjQwNjI3MDgxNDQzWhcNMjYwOTMw
-MDgxNDQzWjAVMRMwEQYDVQQDDAp5aG0uc2VydmVyMIIBIjANBgkqhkiG9w0BAQEF
-AAOCAQ8AMIIBCgKCAQEAxvIjdZTvf1uPYOcCipLf9m8H5931dT2QrYJw0dngPBlo
-LvC0pvW6mBP5O/3RU1G/4+SA69czpz6uA7+Aap/o35x2D8o9QhmcnBbWLLxjNuUr
-zR6gcpaxoB3Ei4ukp3Lq6SiO3lboXAsIqjhERb1F1vj55kkrEwymkpMUaGL2f9+p
-DSMBg6pTyrDWDZ0ADCeKN5Z5q2sH6uUnTkGcuUXWeRBl8ktHOeyrlHiGc6qsg4H1
-az/8fKkmX42cdNK+iYcIqvCJ2Bpv8CG3KUnw184LA9a5XnJWDIiy56gtjXE0MIor
-tOl34IwTRX72AnMtXiF62ZQvvfkMoevM7l0lrQz/TwIDAQABo4G5MIG2MAkGA1Ud
-EwQCMAAwHQYDVR0OBBYEFNNYpBW16O+v3fCu8UEqDfeLHRFbMFEGA1UdIwRKMEiA
-FHPofiVqTR0W6I0MqSd1FKyCHnSGoRqkGDAWMRQwEgYDVQQDDAtFYXN5LVJTQSBD
-QYIUFI1Qcdf9ZKSEpm1htnwfAAFIjxgwEwYDVR0lBAwwCgYIKwYBBQUHAwEwCwYD
-VR0PBAQDAgWgMBUGA1UdEQQOMAyCCnlobS5zZXJ2ZXIwDQYJKoZIhvcNAQELBQAD
-ggEBAKR4HVWrzq/rDui7GTNDQKtbs6yGumBoBBa6WH/CjyupDOI9n74J7YrenL/K
-kZkE6Y58yAzU6/qFp13ESJ44dTcvWg+P6efm/ldjH47SyUGDaFW6B11C+LmKo0nQ
-72dN43iJAEcPN26YYcD6WmHDsYNV6DPR9BERAsMgl6OpGFhz17GCZ6NwtfqP92Pt
-4UZcJem04bTHMBWG0vVBsNHqM43DZRjrahQrGId8AdVBknblT2uZbH4+QPm5e//P
-W6b1RM5yjLfgd4SYig5cr6IQ/CFSmmM3DU0fxRvtE8PLb6RGQRRwwt2t21ePa/Zg
-tjb1B/qUMz9EuBNNKYBFevp4SK0=
+...
 -----END CERTIFICATE-----
 hyemi@KHP18:~/keys/pki/issued$ cd ..
 hyemi@KHP18:~/keys/pki$ ls
@@ -654,28 +573,11 @@ index.txt        issued               reqs     serial.old
 index.txt.attr   openssl-easyrsa.cnf  revoked
 hyemi@KHP18:~/keys/pki$ cat ca.crt
 -----BEGIN CERTIFICATE-----
-MIIDSzCCAjOgAwIBAgIUFI1Qcdf9ZKSEpm1htnwfAAFIjxgwDQYJKoZIhvcNAQEL
-BQAwFjEUMBIGA1UEAwwLRWFzeS1SU0EgQ0EwHhcNMjQwNjI3MDc0MjIyWhcNMzQw
-NjI1MDc0MjIyWjAWMRQwEgYDVQQDDAtFYXN5LVJTQSBDQTCCASIwDQYJKoZIhvcN
-AQEBBQADggEPADCCAQoCggEBAMYRGRd535Hdq7RgYNMKNkhw2bDv4yQoGnbIWAUB
-K1OAsAteXx1Qvv9u24f/dNxm/QrznqAwsehpIv+LP+g/thXZxzotnhg7C5wt52AV
-H1D4bqtgX6CbZvEXEwXWYp4PvbsYYrMAtjd58imtj7i/0NseLYR1u5xTHsB5MTcK
-rVC9vX30wj7RilTaJnzveNKI3qJPmZAhDYVYAczT9hXzziRlt3vHYdSfd957w+uP
-8JeFPI/ssHTbO08baQYCW61DhOExev76ZgzU7zUm9ODY3/nex4GW5EO9kzYGgli/
-AivNE7PCl5w2s+04qfJFoWv81A6y0VSUWDRr51IH4s7IRcECAwEAAaOBkDCBjTAd
-BgNVHQ4EFgQUc+h+JWpNHRbojQypJ3UUrIIedIYwUQYDVR0jBEowSIAUc+h+JWpN
-HRbojQypJ3UUrIIedIahGqQYMBYxFDASBgNVBAMMC0Vhc3ktUlNBIENBghQUjVBx
-1/1kpISmbWG2fB8AAUiPGDAMBgNVHRMEBTADAQH/MAsGA1UdDwQEAwIBBjANBgkq
-hkiG9w0BAQsFAAOCAQEAI34tir9TCOAOCBj3EXfHwseeffh4Y2Xjbu3KPwgRDCf5
-q+Uii9tbDwKeRBgWjd7CnXimaG3khePkC8fVtVYJVsVTqisiAz3gjdP5mDgHo4K4
-cVCIhj95MOs5W0xaP45FdNu2h4zXDuSX/vaZosK/qPFpnCDf24tsxOKnv3Vb9ZYC
-DkjjvXQrbvK9nPhd+Gouu0RaBF5QHPmpBudK+z96F2lcW+4kwN5JLWkJQXH1zdKg
-815I81GgJUUfE2a8PQWPNYO2kavkIdJecJYr96qQ2mvw9BNSXP+u+npItdyFntxr
-217rJBngiMGk7bAmO0Uxh1MooUTmbbxDk/tJCq31kQ==
+...
 -----END CERTIFICATE-----
 ```
 
-![스크린샷 2024-06-24 152258.png](Network%2004%2005bfbb53870e4c5d916b95b1ddd48ec2/%25EC%258A%25A4%25ED%2581%25AC%25EB%25A6%25B0%25EC%2583%25B7_2024-06-24_152258.png)
+![스크린샷 2024-06-24 152258.png](Network%2004/%25EC%258A%25A4%25ED%2581%25AC%25EB%25A6%25B0%25EC%2583%25B7_2024-06-24_152258.png)
 
 ### `SSH를 이용해서 퍼블릭에서 프라이빗으로 접속`
 
