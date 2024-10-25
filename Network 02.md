@@ -1,21 +1,16 @@
 # Network 02
 
-Date: June 25, 2024
-Files & media: 0625%25EC%2588%2598%25EC%2597%2585.txt
-
-[네트워크CJ.pdf](Network%2002%202d73a11a3aa64c28838691d53ad6fa8e/%25EB%2584%25A4%25ED%258A%25B8%25EC%259B%258C%25ED%2581%25ACCJ.pdf)
-
 GNS3와 연동하려면 NPcap이 아닌 WinPcap 설치 필요.
 
-![Untitled](Network%2002%202d73a11a3aa64c28838691d53ad6fa8e/Untitled.png)
+![Untitled](Network%2002/Untitled.png)
 
-![Untitled](Network%2002%202d73a11a3aa64c28838691d53ad6fa8e/Untitled%201.png)
+![Untitled](Network%2002/Untitled%201.png)
 
-![Untitled](Network%2002%202d73a11a3aa64c28838691d53ad6fa8e/Untitled%202.png)
+![Untitled](Network%2002/Untitled%202.png)
 
-![Untitled](Network%2002%202d73a11a3aa64c28838691d53ad6fa8e/Untitled%203.png)
+![Untitled](Network%2002/Untitled%203.png)
 
-![Untitled](Network%2002%202d73a11a3aa64c28838691d53ad6fa8e/Untitled%204.png)
+![Untitled](Network%2002/Untitled%204.png)
 
 ping을 했을 때 패킷이 감. 윈도우와 이더넷의 통신이 원활함을 알 수 있음.
 
@@ -25,21 +20,21 @@ ping을 했을 때 패킷이 감. 윈도우와 이더넷의 통신이 원활함�
 
 한 번 서브넷팅한 것을 또 한번 서브넷팅.
 
-![Untitled](Network%2002%202d73a11a3aa64c28838691d53ad6fa8e/Untitled%205.png)
+![Untitled](Network%2002/Untitled%205.png)
 
 AWS CLI
 
-![Untitled](Network%2002%202d73a11a3aa64c28838691d53ad6fa8e/Untitled%206.png)
+![Untitled](Network%2002/Untitled%206.png)
 
 윈도우에는 192.168.1.100에 대한 정보가 없으므로 가지 않음.
 
 윈도우에서 보내는 것은 R1을 지나서 가야 함
 
-![Untitled](Network%2002%202d73a11a3aa64c28838691d53ad6fa8e/Untitled%207.png)
+![Untitled](Network%2002/Untitled%207.png)
 
 라우팅 테이블에 경로 추가.
 
-![Untitled](Network%2002%202d73a11a3aa64c28838691d53ad6fa8e/Untitled%208.png)
+![Untitled](Network%2002/Untitled%208.png)
 
 ```bash
 R1)
@@ -85,7 +80,7 @@ ip 192.168.2.20  192.168.2.254
 
 컴퓨터도 라우팅 정보가 있음.
 
-![Untitled](Network%2002%202d73a11a3aa64c28838691d53ad6fa8e/Untitled%209.png)
+![Untitled](Network%2002/Untitled%209.png)
 
 HTTP server에 접속할 수 있도록 함.
 
@@ -101,11 +96,11 @@ ping을 보내는 시작 주소 바꾸기
 ping [ip 주소] source [시작 주소]
 ```
 
-![Untitled](Network%2002%202d73a11a3aa64c28838691d53ad6fa8e/Untitled%2010.png)
+![Untitled](Network%2002/Untitled%2010.png)
 
 ip add dhcp → 자동할당받도록 설정.
 
-![Untitled](Network%2002%202d73a11a3aa64c28838691d53ad6fa8e/Untitled%2011.png)
+![Untitled](Network%2002/Untitled%2011.png)
 
 위에 해당이 안 되는 ip는 모두 0.0.0.0으로 감.
 
@@ -243,7 +238,7 @@ virtual pc는 save. router는 wr로 저장.
 
 ## BGF
 
-![Untitled](Network%2002%202d73a11a3aa64c28838691d53ad6fa8e/Untitled%2012.png)
+![Untitled](Network%2002/Untitled%2012.png)
 
 ```bash
 Rsh ip int b → show ip interface brief
@@ -294,13 +289,13 @@ bgp는 neighbor를 해야지만 메세지 전송 가능.
 
 bgp와 remote-as가 같으면 iBGP, 다르면 eBGP
 
-![Untitled](Network%2002%202d73a11a3aa64c28838691d53ad6fa8e/Untitled%2013.png)
+![Untitled](Network%2002/Untitled%2013.png)
 
 …..표시는 request time out
 
 R5가 2.2.12.1에 대한 정보를 가지고 있지 않으므로 time out이 발생.
 
-![Untitled](Network%2002%202d73a11a3aa64c28838691d53ad6fa8e/Untitled%2014.png)
+![Untitled](Network%2002/Untitled%2014.png)
 
 R5가 1.1.1.1에 대한 정보를 가지고 있으므로 time out이 발생하지 않음.
 
