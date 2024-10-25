@@ -1,8 +1,5 @@
 # Network 01
 
-Date: June 24, 2024
-Files & media: 0624-lab.pkt, %25EB%2584%25A4%25ED%258A%25B8%25EC%259B%258C%25ED%2581%25AC.pdf, %25EB%2584%25A4%25ED%258A%25B8%25EC%259B%258C%25ED%2581%25ACCJ.pdf, c3660-jk9o3s-mz.124-16.image, %25EC%2588%2598%25EC%2597%2585%25EC%259E%2590%25EB%25A3%258C.txt, 0624%25EC%2588%2598%25EC%2597%2585.txt
-
 IPv4 주소 : 32비트, 8비트씩 10진수로 표현하고 . 으로 구분
 
 Netmask : 연속된 1값과 연속된 0값으로 구성
@@ -104,15 +101,13 @@ CIDR(Classless Inter Domain Routing)
      1111 11 00
 ```
 
-[네트워크.pdf](Network%2001%2066d4588f28b749f486ff7852c6da0803/%25EB%2584%25A4%25ED%258A%25B8%25EC%259B%258C%25ED%2581%25AC.pdf)
-
 aws 계정 ID: gdu-cloud
 
 사용자이름: stud_17
 
 비밀번호: Goodee@0205
 
-![Untitled](Network%2001%2066d4588f28b749f486ff7852c6da0803/Untitled.png)
+![Untitled](Network%2001/Untitled.png)
 
 목적지에 대한 정보 필요
 
@@ -122,25 +117,25 @@ aws 계정 ID: gdu-cloud
 
 원격으로 떨어져있는 네트워크에 대한 정보는 없으므로 추가해줘야 함.
 
-![라우터에 정보 추가.](Network%2001%2066d4588f28b749f486ff7852c6da0803/Untitled%201.png)
+![라우터에 정보 추가.](Network%2001/Untitled%201.png)
 
 라우터에 정보 추가.
 
-![라우터에 목적지 정보 추가](Network%2001%2066d4588f28b749f486ff7852c6da0803/Untitled%202.png)
+![라우터에 목적지 정보 추가](Network%2001/Untitled%202.png)
 
 라우터에 목적지 정보 추가
 
-![Untitled](Network%2001%2066d4588f28b749f486ff7852c6da0803/Untitled%203.png)
+![Untitled](Network%2001/Untitled%203.png)
 
 NAT가 동작하면 IP가 바뀜.
 
-![Untitled](Network%2001%2066d4588f28b749f486ff7852c6da0803/Untitled%204.png)
+![Untitled](Network%2001/Untitled%204.png)
 
 HTTP로 7계층까지 있음.
 
 2계층만 계속 바뀌면서 넘어가고 3계층 위로는 변하지 않음.
 
-![Untitled](Network%2001%2066d4588f28b749f486ff7852c6da0803/Untitled%205.png)
+![Untitled](Network%2001/Untitled%205.png)
 
 최대 B클래스까지 밖에 생성되지 않음.
 
