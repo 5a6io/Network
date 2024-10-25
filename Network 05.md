@@ -1,8 +1,5 @@
 # Network 05
 
-Date: June 28, 2024
-Files & media: AWS_Network.pdf, 0628-lab.pkt, 0628(DHCP).txt
-
 ## Client VPN 구성 실습
 
 ### `서버 인증서`
@@ -34,13 +31,13 @@ scp -i .\kyt-keypair2.pem kyt-keypair2.pem [ubuntu@54.180.251.22](mailto:ubuntu@
 
 ### `Client VPN Endpoint 생성`
 
-![Untitled](Network%2005%20d28e8a243c424c67b896e2b8a940331f/Untitled.png)
+![Untitled](Network%2005/Untitled.png)
 
-![Untitled](Network%2005%20d28e8a243c424c67b896e2b8a940331f/Untitled%201.png)
+![Untitled](Network%2005/Untitled%201.png)
 
-![Untitled](Network%2005%20d28e8a243c424c67b896e2b8a940331f/Untitled%202.png)
+![Untitled](Network%2005/Untitled%202.png)
 
-![TCP - 443, UDP-1194](Network%2005%20d28e8a243c424c67b896e2b8a940331f/c7e6e521-b0ea-42cd-9115-52444f924909.png)
+![TCP - 443, UDP-1194](Network%2005/c7e6e521-b0ea-42cd-9115-52444f924909.png)
 
 TCP - 443, UDP-1194
 
@@ -59,80 +56,20 @@ cipher AES-256-GCM
 verb 3
 <ca>
 -----BEGIN CERTIFICATE-----
-MIIDSzCCAjOgAwIBAgIUFI1Qcdf9ZKSEpm1htnwfAAFIjxgwDQYJKoZIhvcNAQEL
-BQAwFjEUMBIGA1UEAwwLRWFzeS1SU0EgQ0EwHhcNMjQwNjI3MDc0MjIyWhcNMzQw
-NjI1MDc0MjIyWjAWMRQwEgYDVQQDDAtFYXN5LVJTQSBDQTCCASIwDQYJKoZIhvcN
-AQEBBQADggEPADCCAQoCggEBAMYRGRd535Hdq7RgYNMKNkhw2bDv4yQoGnbIWAUB
-K1OAsAteXx1Qvv9u24f/dNxm/QrznqAwsehpIv+LP+g/thXZxzotnhg7C5wt52AV
-H1D4bqtgX6CbZvEXEwXWYp4PvbsYYrMAtjd58imtj7i/0NseLYR1u5xTHsB5MTcK
-rVC9vX30wj7RilTaJnzveNKI3qJPmZAhDYVYAczT9hXzziRlt3vHYdSfd957w+uP
-8JeFPI/ssHTbO08baQYCW61DhOExev76ZgzU7zUm9ODY3/nex4GW5EO9kzYGgli/
-AivNE7PCl5w2s+04qfJFoWv81A6y0VSUWDRr51IH4s7IRcECAwEAAaOBkDCBjTAd
-BgNVHQ4EFgQUc+h+JWpNHRbojQypJ3UUrIIedIYwUQYDVR0jBEowSIAUc+h+JWpN
-HRbojQypJ3UUrIIedIahGqQYMBYxFDASBgNVBAMMC0Vhc3ktUlNBIENBghQUjVBx
-1/1kpISmbWG2fB8AAUiPGDAMBgNVHRMEBTADAQH/MAsGA1UdDwQEAwIBBjANBgkq
-hkiG9w0BAQsFAAOCAQEAI34tir9TCOAOCBj3EXfHwseeffh4Y2Xjbu3KPwgRDCf5
-q+Uii9tbDwKeRBgWjd7CnXimaG3khePkC8fVtVYJVsVTqisiAz3gjdP5mDgHo4K4
-cVCIhj95MOs5W0xaP45FdNu2h4zXDuSX/vaZosK/qPFpnCDf24tsxOKnv3Vb9ZYC
-DkjjvXQrbvK9nPhd+Gouu0RaBF5QHPmpBudK+z96F2lcW+4kwN5JLWkJQXH1zdKg
-815I81GgJUUfE2a8PQWPNYO2kavkIdJecJYr96qQ2mvw9BNSXP+u+npItdyFntxr
-217rJBngiMGk7bAmO0Uxh1MooUTmbbxDk/tJCq31kQ==
+...
 -----END CERTIFICATE-----
 
 </ca>
 
 <cert> # 클라이언트 인증서
 -----BEGIN CERTIFICATE-----
-MIIDXjCCAkagAwIBAgIRAPVZuICVkJSOIUf7LN8AN1AwDQYJKoZIhvcNAQELBQAw
-FjEUMBIGA1UEAwwLRWFzeS1SU0EgQ0EwHhcNMjQwNjI3MDc0NTExWhcNMjYwOTMw
-MDc0NTExWjAaMRgwFgYDVQQDDA9jbGllbnQxLnlobS50bGQwggEiMA0GCSqGSIb3
-DQEBAQUAA4IBDwAwggEKAoIBAQCnD8tIv3zsH/LUcXAIeMR6y4FGqZ6jEO+HZeKm
-OQhga/Wk63UIvf73It23UYkiTwl8slDneLCtfduRuB1AMMyHyEeIgj5czhtlEb2B
-CJH1NcXuDEwTxEyp+E7zYpWt3ES/gziWlDKFFzwBQo5JGTU3VCTHotQvWwJMGmGX
-/87FsSoihj40f4NpxkGBTdDdPaFU/PAPMlIbCRh0EqhXwTgtwJcQeadoK840rIC+
-XfUyU2maalew71golSkbkkl044BpN/l6eS5VuSutHHIhO9eD+rm6rI8iBpqprceO
-pEWqtt8Nf1bS2+TAgC09ukAlxqq+vr/SQMSJ8FEiRpxcUfMTAgMBAAGjgaIwgZ8w
-CQYDVR0TBAIwADAdBgNVHQ4EFgQU2/L/Yg/Vu/vmeGmOHasAorO38X4wUQYDVR0j
-BEowSIAUc+h+JWpNHRbojQypJ3UUrIIedIahGqQYMBYxFDASBgNVBAMMC0Vhc3kt
-UlNBIENBghQUjVBx1/1kpISmbWG2fB8AAUiPGDATBgNVHSUEDDAKBggrBgEFBQcD
-AjALBgNVHQ8EBAMCB4AwDQYJKoZIhvcNAQELBQADggEBAJHvWC5fNfnhZBnI32Jq
-QkAgdknEu0yBT+iAI6rdzJvgARdyoIw8daVL3+R7A5Tp60/Phmp5vgPY4axbbo32
-cnk/6MGfHr/jYXtL/gRpC0ZlvCpwQeCyjA18TZucCdDHg0kUxL12tSjOPXWOga6j
-wSmWdZC02G3I9BTI6F9H1TxY3eANBWPtBCeQpEQs4Xbe4jaqV8gZtZ9hZX1+SD+a
-lvQoCxP0xVPzUgkitS7lSWh0k3vUVbSL4IdWWfm+bFElnG/SHx6/g6+diXI/kasG
-jjdFN4k2kzQv99PYWQxYKLgesQpMlCztmNX7EcYgmX4OnRgUTCllmwf7udU2wWAb
-L44=
+...
 -----END CERTIFICATE-----
 </cert>
 
 <key> # 클라이언트 
 -----BEGIN PRIVATE KEY-----
-MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCnD8tIv3zsH/LU
-cXAIeMR6y4FGqZ6jEO+HZeKmOQhga/Wk63UIvf73It23UYkiTwl8slDneLCtfduR
-uB1AMMyHyEeIgj5czhtlEb2BCJH1NcXuDEwTxEyp+E7zYpWt3ES/gziWlDKFFzwB
-Qo5JGTU3VCTHotQvWwJMGmGX/87FsSoihj40f4NpxkGBTdDdPaFU/PAPMlIbCRh0
-EqhXwTgtwJcQeadoK840rIC+XfUyU2maalew71golSkbkkl044BpN/l6eS5VuSut
-HHIhO9eD+rm6rI8iBpqprceOpEWqtt8Nf1bS2+TAgC09ukAlxqq+vr/SQMSJ8FEi
-RpxcUfMTAgMBAAECggEAI7skDnYuQM6AgGGWxakW1PCrwLJMpLHdmUb4V/cAzKaq
-jlBx4qHIY5FIfInq27St4ca9uRQ+LY0qphsL3ovRYwU6D39T2UOX5mEJ+AweM6UB
-pW1p5BxrDTt3n2SpgNsItTFarBIcUAztH5PdnNLQZ/oON8iiu1Iqxp4p23mx/uQR
-lf3NkHJ7vhvHmZHtzlV/twTUalxRVJE9K+y6K2bEFD5lQzzS3ornRt+3xhAcHZJZ
-JoEFO+vfe9y76ibamF1MG9MLWpa5GkhxAJRT7dXamzneBi+lp3jnwDQx7xirZBgv
-dRx4Viv8aVd8bUptH6WOq7HhTdH1cJ91HnV3HszhEQKBgQC5slqfd5u7dS3GKz8R
-r5W/uq2ZD9xdSzht/gtinKm+ZBbRXgBdSB/iK1qYr0N2J1c71SSny94Igk37Wdzy
-6xs42eO4AtjK9VtdeOpMgAg9exXYD7QvBTWrd2P9s0H7TwI23U6aO8eSNq5TvjoA
-VP34YerVulOEwAxmNXD7HxncWwKBgQDmT1f9hWLRmyZJA4PYgUwWfAmMA1J0kTvb
-/SAp8xtuHf7aUsofPFdH2e0ZIxqs9pgw5Xe75R7WRl9Kagwvj1FyxOlbIl70oFC9
-6ZVTtKNPysC7wHRCiq3rSTptJVvHnSbUnjYUaGRTBoZoO06/XeTVxWBhGqlXMR4g
-1zMllxNhqQKBgQCqaEaLYmqyGvU3jsYgx72nJXtbI9f4cSfGoEP4aYXHpvfdh+LT
-t3UyytAnn2ZMDgwaZx1tMkN+EX3Yc/2zmhbwE9vKKCqkDYabf3ObYj6tlL9V+AtE
-vwYiZLyIuzCIm1eP24TfOo6I2c8eIEn/tf8eKVUkbwlnoAmA3ffhKwhDUwKBgAQ8
-Dz0dF70M4j5Tbzgq4HBFZZOKeBimlvgrhkzfKHD04ju3a/n5DQ3IJwDgUVw+yHuV
-rIbq5o9ACf5/RqwVMYUvs662ShKrY/Cp+9HnL12HN9X76udST3JVDVr2ZeKctBsS
-saHcbYPNSeletcr0+gEoOOZwLA7rW0d1TX5ycavJAoGAK4FeZEp3uItGrPH93WjK
-MqCisgqHSeFar2r7p9exiXUfOzSNjTku0X0SH7vi3IQXgA8HCnUw3EX7nggdxzCq
-OLwt9K+TltkCmHV04eJlKIpOIhkoze+0LO9qCo7NFh9G97jBzEtMZFKZBfhnKuFo
-j1poczFioxLFdJZfwFmixio=
+...
 -----END PRIVATE KEY-----
 </key>
 
@@ -148,55 +85,7 @@ hyemi@KHP18:~$ sudo mkdir -p /etc/apt/keyrings && curl -fsSL https://packages.op
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 Version: GnuPG v1
 
-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
-R0bbxjM9S40=
-=ntdv
+....
 -----END PGP PUBLIC KEY BLOCK-----
 hyemi@KHP18:~$ DISTRO=$(lsb_release -c | awk '{print $2}')
 hyemi@KHP18:~$ echo "deb [signed-by=/etc/apt/keyrings/openvpn.asc] https://packages.openvpn.net/openvpn3/debian $DISTRO main" | sudo tee /etc/apt/sources.list.d/openvpn-packages.list
@@ -379,7 +268,7 @@ ubuntu@ip-172-16-20-205:~$
 
 ### `Windows에서 직접 EC2로 연결`
 
-![Untitled](Network%2005%20d28e8a243c424c67b896e2b8a940331f/Untitled%203.png)
+![Untitled](Network%2005/Untitled%203.png)
 
 ## DHCP(Dyamic Host Configuration Protocol)
 
@@ -419,14 +308,14 @@ ip dhcp excluded-address 시작IP주소 마지막IP주소
 DHCP Relay Agent는 DHCP서버를 지정해서 유니캐스트로 전송한다.
 ip helper-address x.x.x.x 를 해당 네트워크 인터페이스에 설정한다.
 
-![클라이언트한테 줄 정보 세팅. Service는 On으로 세팅.](Network%2005%20d28e8a243c424c67b896e2b8a940331f/Untitled%204.png)
+![클라이언트한테 줄 정보 세팅. Service는 On으로 세팅.](Network%2005/Untitled%204.png)
 
 클라이언트한테 줄 정보 세팅. Service는 On으로 세팅.
 
-![DHCP로 자동할당 받은 결과.](Network%2005%20d28e8a243c424c67b896e2b8a940331f/Untitled%205.png)
+![DHCP로 자동할당 받은 결과.](Network%2005/Untitled%205.png)
 
 DHCP로 자동할당 받은 결과.
 
-![Server1에 DNS를 추가하고 nslookup으로 웹사이트 ip 주소 확인.](Network%2005%20d28e8a243c424c67b896e2b8a940331f/Untitled%206.png)
+![Server1에 DNS를 추가하고 nslookup으로 웹사이트 ip 주소 확인.](Network%2005/Untitled%206.png)
 
 Server1에 DNS를 추가하고 nslookup으로 웹사이트 ip 주소 확인.
