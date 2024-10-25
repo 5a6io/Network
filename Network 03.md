@@ -1,8 +1,5 @@
 # Network 03
 
-Date: June 26, 2024
-Files & media: 0626-lab.pkt
-
 ## VPC 실습
 
 172.16.0.0/16 → 172.16.0.0/22
@@ -26,7 +23,7 @@ Files & media: 0626-lab.pkt
 172.20.18.0/24
 172.20.19.0/24
 
-![Untitled](Network%2003%20cd3de9872b53409eb102330fe34ef900/87de600e-0bad-43ae-be9b-69a1ac4e35f0.png)
+![Untitled](Network%2003/87de600e-0bad-43ae-be9b-69a1ac4e35f0.png)
 
 R1에서 routing.
 
@@ -52,7 +49,7 @@ no sh
 
 NAT를 쓰지 않으면 EC2에서 Linux를 게이트웨이로 쓸 수 있음.
 
-![Untitled](Network%2003%20cd3de9872b53409eb102330fe34ef900/Untitled.png)
+![Untitled](Network%2003/Untitled.png)
 
 ```bash
 VPC2)  172.31.0.0/16
@@ -81,7 +78,7 @@ ip 172.31.1.60 172.31.1.1
 
 ## Static NAT 실습
 
-![Untitled](Network%2003%20cd3de9872b53409eb102330fe34ef900/Untitled%201.png)
+![Untitled](Network%2003/Untitled%201.png)
 
 Static NAT는 local IP주소와 global IP주소가 1대 1 맵핑되어있기 때문에 내부에서 외부로 외부에서 내부로 모든 트래픽이 허용됨.
 
@@ -228,9 +225,9 @@ NAT_RTR(config-if)#ip access-group 10 out
 
 ## ACL 실습
 
-![Untitled](Network%2003%20cd3de9872b53409eb102330fe34ef900/Untitled%202.png)
+![Untitled](Network%2003/Untitled%202.png)
 
-![Untitled](Network%2003%20cd3de9872b53409eb102330fe34ef900/Untitled%203.png)
+![Untitled](Network%2003/Untitled%203.png)
 
 ACL로 차단해서 통신이 안 됨.
 
