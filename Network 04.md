@@ -635,7 +635,7 @@ hm-keypair.pem
 ubuntu@ip-172-16-16-135:~$ ls -l
 total 4
 -rw-rw-r-- 1 ubuntu ubuntu 1674 Jun 27 08:53 hm-keypair.pem
-ubuntu@ip-172-16-16-135:~$ chmod 400 hm-keypair.pem -> 권한 축
+ubuntu@ip-172-16-16-135:~$ chmod 400 hm-keypair.pem -> 권한 축소
 ubuntu@ip-172-16-16-135:~$ ssh -i hm-keypair.pem ubuntu@172.16.20.100 -> Private Server로 접속
 The authenticity of host '172.16.20.100 (172.16.20.100)' can't be established.
 
